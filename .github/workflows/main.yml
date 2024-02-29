@@ -22,6 +22,6 @@ jobs:
           staticVariable: yooo
     steps:
       - name: Test Log
-        run: echo "hello! $nowUsername $nowSourceInstance $staticVariable $env_var ${{ vars.TEST }}"
+        run: echo "hello! $nowUsername $nowSourceInstance $staticVariable $env_var " ${{ vars.TEST }}
 
       
