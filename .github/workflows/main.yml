@@ -22,6 +22,6 @@ jobs:
           staticVariable: yooo
     steps:
       - name: Test Log
-        run: echo "hello! ${{ secrets.SN_USERNAME }} ${{ secrets.SN_DEV_INSTANCE }} $staticVariable $env_var he mad"
+        run: echo "hello! ${{ secrets.SN_USERNAME }} ${{ secrets.SN_DEV_INSTANCE }} ${{ vars.REPO_VAR }}"
 
       
