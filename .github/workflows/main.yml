@@ -16,7 +16,7 @@ jobs:
     name: Publish from Dev
     runs-on: ubuntu-latest
     environment:
-      name: my_pdi
+      name: ${{github.event.inputs.environment}}
     env:
       nowUsername: ${{ secrets.NOW_USERNAME }}
       nowSourceInstance: ${{ secrets.NOW_CLIENT_INSTANCE }}
