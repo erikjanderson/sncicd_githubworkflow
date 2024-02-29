@@ -14,7 +14,8 @@ jobs:
     
     name: Publish from Dev
     runs-on: ubuntu-latest
-    #environment: my_pdi
+    environment:
+      name: $env_var
     env:
           nowUsername: ${{ secrets.SN_USERNAME }}
           nowSourceInstance: ${{ secrets.SN_DEV_INSTANCE }}
