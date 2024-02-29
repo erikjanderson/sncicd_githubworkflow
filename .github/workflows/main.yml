@@ -18,7 +18,7 @@ jobs:
       name: my_pdi
     env:
           nowUsername: ${{ secrets.NOW_USERNAME }}
-          nowSourceInstance: ${{ secrets.SN_DEV_INSTANCE }}
+          nowSourceInstance: ${{ secrets.NOW_CLIENT_INSTANCE }}
           nowRegularVariable: ${{ vars.REPO_VAR }}
           staticVariable: yooo
     steps:
