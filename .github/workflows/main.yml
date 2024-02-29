@@ -23,6 +23,6 @@ jobs:
           staticVariable: yooo
     steps:
       - name: Test Log
-        run: echo "hello! ${{ secrets.SN_USERNAME }} ${{ secrets.SN_DEV_INSTANCE }} $nowRegularVariable"
+        run: echo "hello! ${{ secrets.SN_USERNAME }} ${{ secrets.SN_DEV_INSTANCE }} $nowRegularVariable ${{vars.TEST}}"
 
       
