@@ -26,9 +26,9 @@ jobs:
       - name: Test Log
         run: echo "hello! ||| $nowUsername ||| ${{secrets.NOW_CLIENT_INSTANCE}} ||| ${{ vars.REPO_VAR }} ||| ${{vars.TEST}} ||| ${{secrets.REPO_SECRET}}"
       - name: Log Variables
-        run: echo "toJSON(vars)"
+        run: echo "${{toJSON(vars)}}"
       - name: Log Secrets
-        run: echo "toJSON(secrets)"
+        run: echo "${{toJSON(secrets)}}"
 
 
       
