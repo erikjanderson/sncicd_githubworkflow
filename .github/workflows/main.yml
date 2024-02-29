@@ -14,7 +14,7 @@ jobs:
     
     name: Publish from Dev
     runs-on: ubuntu-latest
-    environment: $env_var
+    environment: my_pdi
     env:
           nowUsername: ${{ secrets.SN_USERNAME }}
           nowSourceInstance: ${{ secrets.SN_DEV_INSTANCE }}
@@ -22,6 +22,6 @@ jobs:
           staticVariable: yooo
     steps:
       - name: Test Log
-        run: echo "hello! $nowUsername $nowSourceInstance $staticVariable $env_var " ${{ vars.TEST }}
+        run: echo "hello! $nowUsername $nowSourceInstance $staticVariable $env_var he mad"
 
       
