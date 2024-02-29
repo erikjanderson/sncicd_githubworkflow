@@ -29,6 +29,8 @@ jobs:
         run: echo "${{toJSON(vars)}}"
       - name: Log Secrets
         run: echo "${{toJSON(secrets)}}"
+      - name: What is github
+        run: echo "${{toJSON(github)}}"
 
 
       
