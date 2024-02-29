@@ -17,12 +17,12 @@ jobs:
     environment:
       name: my_pdi
     env:
-          nowUsername: ${{ secrets.SN_USERNAME }}
+          nowUsername: ${{ secrets.NOW_USERNAME }}
           nowSourceInstance: ${{ secrets.SN_DEV_INSTANCE }}
           nowRegularVariable: ${{ vars.REPO_VAR }}
           staticVariable: yooo
     steps:
       - name: Test Log
-        run: echo "hello! ||| ${{secrets.SN_USERNAME}} ||| ${{secrets.SN_DEV_INSTANCE}} ||| ${{ vars.REPO_VAR }} ||| ${{vars.TEST}} ||| ${{secrets.REPO_SECRET}}"
+        run: echo "hello! ||| ${{secrets.NOW_USERNAME}} ||| ${{secrets.NOW_CLIENT_INSTANCE}} ||| ${{ vars.REPO_VAR }} ||| ${{vars.TEST}} ||| ${{secrets.REPO_SECRET}}"
 
       
