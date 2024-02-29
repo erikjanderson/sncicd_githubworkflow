@@ -6,6 +6,10 @@ on:
 env:
   # Setting an environment variable with the value of a configuration variable
   env_var: my_pdi
+  nowUsername: ${{ secrets.NOW_USERNAME }}
+  nowSourceInstance: ${{ secrets.NOW_CLIENT_INSTANCE }}
+  nowRegularVariable: ${{ vars.REPO_VAR }}
+  staticVariable: yooo
   
 
 
@@ -15,14 +19,10 @@ jobs:
     name: Publish from Dev
     runs-on: ubuntu-latest
     environment:
-      name: my_pdi
-    env:
-          nowUsername: ${{ secrets.NOW_USERNAME }}
-          nowSourceInstance: ${{ secrets.NOW_CLIENT_INSTANCE }}
-          nowRegularVariable: ${{ vars.REPO_VAR }}
-          staticVariable: yooo
+      name: $env_var
+          
     steps:
       - name: Test Log
-        run: echo "hello! ||| ${{secrets.NOW_USERNAME}} ||| ${{secrets.NOW_CLIENT_INSTANCE}} ||| ${{ vars.REPO_VAR }} ||| ${{vars.TEST}} ||| ${{secrets.REPO_SECRET}}"
+        run: echo "hello! ||| $nowUsername ||| ${{secrets.NOW_CLIENT_INSTANCE}} ||| ${{ vars.REPO_VAR }} ||| ${{vars.TEST}} ||| ${{secrets.REPO_SECRET}}"
 
       
