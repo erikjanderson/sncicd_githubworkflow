@@ -18,7 +18,7 @@ jobs:
     env:
           nowUsername: ${{ secrets.SN_USERNAME }}
           nowSourceInstance: ${{ secrets.SN_DEV_INSTANCE }}
-          nowRegularVariable: ${{ vars.TEST }}
+          nowRegularVariable: ${{ vars.REPO_VAR }}
           staticVariable: yooo
     steps:
       - name: Test Log
