@@ -1,7 +1,4 @@
 name: Test Workflow
-
-
-
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -14,18 +11,17 @@ env:
 
 jobs:
   test:
-    environment: $env_var
+    
     name: Publish from Dev
     runs-on: ubuntu-latest
-    # Below line can be used to set conditionals for modifying your pipeline as needed.
-    # if: ${{ github.event_name == 'pull_request'}}
+    environment: $env_var
     env:
           nowUsername: ${{ secrets.SN_USERNAME }}
           nowSourceInstance: ${{ secrets.SN_DEV_INSTANCE }}
-          nowRegularVariable: ${{ vars.TEST}}
+          nowRegularVariable: ${{ vars.TEST }}
           staticVariable: yooo
     steps:
       - name: Test Log
-        run: echo "hello! $nowUsername $nowSourceInstance $staticVariable $env_var"
+        run: echo "hello! $nowUsername $nowSourceInstance $staticVariable $env_var ${{ vars.TEST }}"
 
       
