@@ -14,7 +14,7 @@ env:
 
 jobs:
   test:
-    environment: ${{env.env_var}}
+    environment: $env_var
     name: Publish from Dev
     runs-on: ubuntu-latest
     # Below line can be used to set conditionals for modifying your pipeline as needed.
