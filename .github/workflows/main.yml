@@ -22,6 +22,7 @@ jobs:
         env:
           nowUsername: ${{ secrets.SN_USERNAME }}
           nowSourceInstance: ${{ secrets.SN_DEV_INSTANCE }}
-        run: echo "hello! $nowUsername" $nowSourceInstance
+          nowRegularVariable: ${{ vars.TEST}}
+        run: echo "hello! $nowUsername $nowSourceInstance"
 
       
