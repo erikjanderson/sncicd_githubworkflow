@@ -6,10 +6,7 @@ on:
 env:
   # Setting an environment variable with the value of a configuration variable
   env_var: my_pdi
-  nowUsername: ${{ secrets.NOW_USERNAME }}
-  nowSourceInstance: ${{ secrets.NOW_CLIENT_INSTANCE }}
-  nowRegularVariable: ${{ vars.REPO_VAR }}
-  staticVariable: yooo
+  
   
 
 
@@ -20,9 +17,18 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: $env_var
-          
+    env:
+      nowUsername: ${{ secrets.NOW_USERNAME }}
+      nowSourceInstance: ${{ secrets.NOW_CLIENT_INSTANCE }}
+      nowRegularVariable: ${{ vars.REPO_VAR }}
+      staticVariable: yooo
     steps:
       - name: Test Log
         run: echo "hello! ||| $nowUsername ||| ${{secrets.NOW_CLIENT_INSTANCE}} ||| ${{ vars.REPO_VAR }} ||| ${{vars.TEST}} ||| ${{secrets.REPO_SECRET}}"
+      - name: Log Variables
+        run: echo "toJSON(vars)"
+      - name: Log Secrets
+        run: echo "toJSON(secrets)"
+
 
       
