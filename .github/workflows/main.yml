@@ -1,0 +1,27 @@
+name: Test Workflow
+
+
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+
+
+jobs:
+  test:
+    environment: my_pdi
+    name: Publish from Dev
+    runs-on: ubuntu-latest
+    # Below line can be used to set conditionals for modifying your pipeline as needed.
+    # if: ${{ github.event_name == 'pull_request'}}
+
+    steps:
+
+      - name: Test Log
+        env:
+          nowUsername: ${{ secrets.SN_USERNAME }}
+          nowSourceInstance: ${{ secrets.SN_DEV_INSTANCE }}
+        run: echo "hello! $nowUsername" $nowSourceInstance
+
+      
